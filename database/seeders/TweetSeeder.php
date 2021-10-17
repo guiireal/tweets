@@ -2,17 +2,18 @@
 
 namespace Database\Seeders;
 
+use App\Models\Tweet;
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class TweetSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * Run the database seeds.
      *
      * @return void
      */
     public function run()
     {
-        $this->call([UserSeeder::class, TweetSeeder::class]);
+        Tweet::factory(3)->create();
     }
 }
