@@ -39,4 +39,16 @@ class ShowTweets extends Component
 
         $this->content = '';
     }
+
+    public function like(Tweet $tweet)
+    {
+        $tweet->likes()->create([
+            'user_id' => auth()->id(),
+        ]);
+    }
+
+    public function deslike(Tweet $tweet)
+    {
+        $tweet->likes()->delete();
+    }
 }
